@@ -1,6 +1,11 @@
 numpy
 imutils
-sklearn
+scikit-learn
 tensorflow
 keras
 perlin-noise
+flasgger
+flask
+opencv-python
+Pillow
+flask_healthz

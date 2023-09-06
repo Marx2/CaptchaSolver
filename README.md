@@ -29,31 +29,47 @@ To run these scripts, you need the following installed:
 
 Run:
 
-python3 generate_captcha_images.py
+python3 1_generate_captcha_images.py
 
-The results will be stored in the "self_generated_captcha_images" folder.
+The results will be stored in the "self_generated_captcha_images2" folder.
 
 
 ### Step 2: Extract single letters from CAPTCHA images
 
 Run:
 
-python3 single_letter_extractor_from_captchas.py
+python3 2_single_letter_extractor_from_captchas.py
 
-The results will be stored in the "self_extracted_letter_images" folder.
+The results will be stored in the "self_extracted_letter_images2" folder.
 
 
 ### Step 3: Train the neural network to recognize single letters
 
 Run:
 
-python3 captcha_detection_model_trainer.py
+python3 3_captcha_detection_model_trainer.py
 
-This will write out "self_captcha_model.hdf5" and "self_model_labels.dat"
+This will write out "self_captcha_model2.hdf5" and "self_model_labels2.dat"
 
 
 ### Step 4: Use the model to solve CAPTCHAs!
 
 Run: 
 
-python3 captcha_solver_with_model.py
+python3 4_captcha_solver_with_model.py
+
+### Step 5: Run local webserver
+
+Run:
+
+python3 app.py
+
+Application is available at: http://localhost:8000/apidocs/
+
+
+### Step 6 (optional): Build Docker image
+
+Run:
+
+docker build -t captcha .
+docker run -p 8000:8000 captcha
