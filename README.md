@@ -72,4 +72,5 @@ Application is available at: http://localhost:8000/apidocs/
 Run:
 
 docker build -t captcha .
+
 docker run -p 8000:8000 captcha
