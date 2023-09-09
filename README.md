@@ -54,7 +54,7 @@ This will write out "self_captcha_model2.hdf5" and "self_model_labels2.dat"
 
 ### Step 4: Use the model to solve CAPTCHAs!
 
-Run: 
+Run:
 
 python3 4_captcha_solver_with_model.py
 
@@ -66,6 +66,7 @@ python3 app.py
 
 Application is available at: http://localhost:8000/apidocs/
 
+Healthcheck is available at: http://localhost:8000/healthz/live
 
 ### Step 6 (optional): Build Docker image
 
