@@ -9,3 +9,4 @@ flask
 opencv-python
 Pillow
 flask_healthz
+gunicorn

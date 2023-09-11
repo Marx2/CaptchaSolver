@@ -13,4 +13,5 @@ COPY self_captcha_model2.hdf5 .
 COPY self_model_labels2.dat .
 EXPOSE 8000
 ENV FLASK_APP=app.py
-CMD ["flask", "run", "--host", "0.0.0.0", "--port", "8000"]
+ENV FLASK_ENV="docker"
+CMD ["gunicorn",  "--bind", "0.0.0.0:8000", "app:app"]

@@ -1,20 +1,21 @@
-from flask import Flask, request, jsonify
-from keras.models import load_model
-from helpers import resize_to_fit, get_background, preprocess_image, preprocess_image2
-from imutils import paths
-import numpy as np
-import imutils
-import cv2
 import pickle
+
+import cv2
+import imutils
+import numpy as np
 from flasgger import Swagger
+from flask import Flask, request
 from flask_healthz import healthz
-from flask_healthz import HealthError
+from keras.models import load_model
+
+from helpers import resize_to_fit, get_background, preprocess_image2
+
+print("Application is starting...")
 
 MODEL_FILENAME = "self_captcha_model2.hdf5"
 MODEL_LABELS_FILENAME = "self_model_labels2.dat"
 CAPTCHA_IMAGE_FOLDER = "self_generated_captcha_images2"
 
-print("Application is starting...")
 app = Flask(__name__)
 app.register_blueprint(healthz, url_prefix="/healthz")
 app.config['SWAGGER'] = {
@@ -174,4 +175,4 @@ model = load_model(MODEL_FILENAME)
 
 
 if __name__ == '__main__':
-    app.run(port=8000, debug=False)
+    app.run(port=8000, debug=True)
