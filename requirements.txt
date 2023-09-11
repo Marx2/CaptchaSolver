@@ -1,7 +1,6 @@
 numpy
 imutils
 scikit-learn
-tensorflow
 keras
 perlin-noise
 flasgger
