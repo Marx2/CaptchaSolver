@@ -6,6 +6,7 @@ RUN apt update && apt install -y python3-opencv \
   rm -rf /var/lib/apt/lists/*
 COPY ./requirements.txt /app
 RUN pip install --no-cache-dir -r requirements.txt
+echo "$TARGETPLATFORM"
 RUN if [ "$TARGETPLATFORM" = "linux/arm64" ]; then \
       pip install --no-cache-dir tensorflow; \
     else \
