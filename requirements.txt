@@ -1,7 +1,6 @@
 numpy
 imutils
 scikit-learn
-keras==2.8.0
 perlin-noise
 flasgger
 flask
@@ -9,3 +8,4 @@ opencv-python
 Pillow
 flask_healthz
 gunicorn
+

@@ -15,8 +15,10 @@ RUN printf "I'm building for TARGETPLATFORM=${TARGETPLATFORM}" \
     && printf "With uname -s : " && uname -s \
     && printf "and  uname -m : " && uname -m
 RUN if [ "$TARGETPLATFORM" = "linux/arm64" ]; then \
+      pip install --no-cache-dir keras; \
       pip install --no-cache-dir tensorflow; \
     else \
+      pip install --no-cache-dir keras==2.8.0; \
       pip install --no-cache-dir --ignore-installed --upgrade https://tf.novaal.de/core2/tensorflow-2.8.0-cp310-cp310-linux_x86_64.whl; \
     fi
 COPY app.py .
