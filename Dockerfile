@@ -27,4 +27,5 @@ COPY self_model_labels2.dat .
 EXPOSE 8000
 ENV FLASK_APP=app.py
 ENV FLASK_ENV="docker"
+ENV PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python
 CMD ["gunicorn",  "--bind", "0.0.0.0:8000", "app:app"]
