@@ -1,7 +1,7 @@
 numpy
 imutils
 scikit-learn
-keras
+keras==2.8.0
 perlin-noise
 flasgger
 flask
