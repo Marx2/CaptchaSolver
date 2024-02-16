@@ -37,7 +37,7 @@ jobs:
             type=semver,pattern={{major}}
             type=sha
       - name: Log into registry ${{ env.REGISTRY }}
-        uses: docker/login-action@v2
+        uses: docker/login-action@v3
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
